@@ -1,8 +1,5 @@
-height = []
-for i in 0..9
-    height[i] << gets.to_i
-end
-height.sort! {|a, b| b <=> a}
-3.times do
-    puts height[i]
+while line = gets
+    num = line.split("\s")
+    sum = num[0].to_i + num[1].to_i
+    puts sum.to_s.length
 end
