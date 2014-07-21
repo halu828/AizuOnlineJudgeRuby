@@ -1,6 +1,25 @@
+def gcd(m, n)
+    if ((0 == m) || (0 == n))
+        return 0;
+    end
+    while m != n
+        if m > n
+            m = m - n
+        else
+            n = n - m
+        end
+    end
+    return m
+end
+
+def lcm(m, n)
+    if (0 == m) || (0 == n)
+        return 0
+    end
+    return ((m / gcd(m, n)) * n)
+end
+
 while line = gets
-    a,b,c,d,e,f = line.split.map(&:to_f)
-    x = (c * e - b * f)/(a * e - b * d) + 0.000
-    y = (c * d - a * f)/(b * d - a * e) + 0.000
-    printf("%.3f %.3f\n", x, y)
+    a,b = line.split.map(&:to_i)
+    printf("%d %d\n", gcd(a, b), lcm(a, b))
 end
