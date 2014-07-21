@@ -1,8 +1,6 @@
-gets.to_i.times do
-    a,b,c = gets.split(" ").to_i.sort
-    if c*c == a*a + b*b
-        puts "YES"
-    else
-        puts "NO"
-    end
+while line = gets
+    a,b,c,d,e,f = line.split.map(&:to_f)
+    x = (c * e - b * f)/(a * e - b * d)
+    y = (c * d - a * f)/(b * d - a * e)
+    printf("%.3f %.3f\n", x, y)
 end
