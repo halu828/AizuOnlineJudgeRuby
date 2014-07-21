@@ -1,5 +1,8 @@
-for i in 1..9
-    for j in 1..9
-        print(i,"x",j,"=",i*j,"\n");
-    end
+height = []
+for i in 0..9
+    height[i] = gets.to_i
+end
+height.sort! {|a, b| b <=> a}
+for i in 0..2
+    puts height[i]
 end
